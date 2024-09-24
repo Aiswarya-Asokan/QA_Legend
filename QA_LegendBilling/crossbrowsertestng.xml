@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="loginPageTest">
+	<parameter name="browser" value="Chrome"></parameter>
+    <classes>
+      <class name="testscript.LoginPageTest">
+      <methods>
+		<include name="verify_Login_With_Valid_Credentials"></include>
+		<include name="verify_errorMessage_whileLogin_withInvalid_credentials"></include>
+	  </methods>
+	  </class>
+      </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
