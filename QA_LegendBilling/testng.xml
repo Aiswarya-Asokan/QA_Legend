@@ -8,12 +8,10 @@
   <test thread-count="5" name="Test">
 	<parameter name="browser" value="Chrome"></parameter>
     <classes>
-   <!--   <class name="testscript.UserActionsPageTest"/>
-      <class name="testscript.ResetPageTest"/>
-      <class name="testscript.HomePageTest"/>
-      <class name="testscript.LoginPageTest"/> -->
-      
-            <class name="testscript.AddUserPageTest"/>
+ 
+     
+            <class name="testscript.UserActionsPageTest"/>  
+               <class name="testscript.AddUserPageTest"/>  
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

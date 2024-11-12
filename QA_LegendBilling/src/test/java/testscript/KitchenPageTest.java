@@ -17,8 +17,8 @@ public class KitchenPageTest extends Base_Class {
 	{
 		
 
-	String user_name=ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
-	String pass_word=ExcelUtility.getIntegerData(0, 1, Constants.LOGINPAGE);
+	String user_name=ExcelUtility.getStringData(0, 0,"LoginTest");
+	String pass_word=ExcelUtility.getIntegerData(0, 1,"LoginTest" );
 
 
 	LoginPage login=new LoginPage(driver);

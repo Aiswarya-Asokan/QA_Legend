@@ -44,7 +44,7 @@ public class UsersPage {
 	 }
 	 public String display_Table()
 	 { 
-		 WaitUtility.waitFor_Element(driver, result_table);
+		 WaitUtility.waitForElement(driver, result_table);
 		 String result=result_table.getText();
 	  	return result;
 		
@@ -55,9 +55,5 @@ public class UsersPage {
 		return new HomePage(driver);
 	 }
 	 
-	 public void selectFrom_Action_Field()
-	 {
-		 PageUtility.select_IndexOperation(action_fld, "5");
-	 }
-	 
+	
 }

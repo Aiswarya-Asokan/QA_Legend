@@ -17,10 +17,10 @@ public class AdminUpdatePageTest extends Base_Class {
 	@Test
  public void verify_adminUpdate_Page() throws IOException
  {
-	    String user_name=ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
-		String pass_word=ExcelUtility.getIntegerData(0, 1, Constants.LOGINPAGE);
-	    String admin_update_name=ExcelUtility.getStringData(0, 0, Constants.ADMINUPDATE);
-	    String actual_result=ExcelUtility.getStringData(1, 0, Constants.UPDATEMESSAGE);
+	    String user_name=ExcelUtility.getStringData(0, 0,"LoginTest");
+		String pass_word=ExcelUtility.getIntegerData(0, 1, "LoginTest");
+	    String admin_update_name=ExcelUtility.getStringData(0, 0, "AdminUpdateTest");
+	    String actual_result=ExcelUtility.getStringData(1, 0, "AdminUpdateTest");
 	    
 	     LoginPage login=new LoginPage(driver);
 		 login.enter_Username(user_name);

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Sep 22 19:50:58 IST 2024</td>
+<td>Started on:</td><td>Tue Sep 24 19:09:46 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (164 ms)</td>
+<tr><td>Total time:</td><td>5 seconds (5363 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,14 +76,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testscript.AdminUpdatePageTest.setup()'><b>setup</b><br>Test class: testscript.AdminUpdatePageTest</td>
-<td><div><pre>java.io.FileNotFoundException: C:\Users\DELL\eclipse-workspace\QA_LegendBilling\src\main\resources\Config.property (The system cannot find the file specified)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:152)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
-	at automation_core.Base_Class.intialise_browse(Base_Class.java:30)
-	at automation_core.Base_Class.setup(Base_Class.java:61)
+<td title='testscript.KitchenPageTest.setup()'><b>setup</b><br>Test class: testscript.KitchenPageTest</td>
+<td><div><pre>java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:83)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:130)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:194)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:305)
+	at automation_core.Base_Class.initializebrowser(Base_Class.java:60)
+	at automation_core.Base_Class.setup(Base_Class.java:67)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -114,14 +116,16 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1267149311", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1267149311'><pre>java.io.FileNotFoundException: C:\Users\DELL\eclipse-workspace\QA_LegendBilling\src\main\resources\Config.property (The system cannot find the file specified)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:152)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
-	at automation_core.Base_Class.intialise_browse(Base_Class.java:30)
-	at automation_core.Base_Class.setup(Base_Class.java:61)
+</pre></div><a href='#' onClick='toggleBox("stack-trace707161353", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace707161353'><pre>java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:83)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:130)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:194)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:305)
+	at automation_core.Base_Class.initializebrowser(Base_Class.java:60)
+	at automation_core.Base_Class.setup(Base_Class.java:67)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -153,8 +157,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>testscript.AdminUpdatePageTest@74e28667</td></tr>
+<td>5</td>
+<td>testscript.KitchenPageTest@293a5bf6</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -165,14 +169,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testscript.AdminUpdatePageTest.verify_adminUpdate_Page()'><b>verify_adminUpdate_Page</b><br>Test class: testscript.AdminUpdatePageTest</td>
-<td><div><pre>java.io.FileNotFoundException: C:\Users\DELL\eclipse-workspace\QA_LegendBilling\src\main\resources\Config.property (The system cannot find the file specified)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:152)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
-	at automation_core.Base_Class.intialise_browse(Base_Class.java:30)
-	at automation_core.Base_Class.setup(Base_Class.java:61)
+<td title='testscript.KitchenPageTest.verify_kitchen_Order()'><b>verify_kitchen_Order</b><br>Test class: testscript.KitchenPageTest</td>
+<td><div><pre>java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:83)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:130)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:194)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:305)
+	at automation_core.Base_Class.initializebrowser(Base_Class.java:60)
+	at automation_core.Base_Class.setup(Base_Class.java:67)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -203,14 +209,16 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace896982466", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace896982466'><pre>java.io.FileNotFoundException: C:\Users\DELL\eclipse-workspace\QA_LegendBilling\src\main\resources\Config.property (The system cannot find the file specified)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:152)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:106)
-	at automation_core.Base_Class.intialise_browse(Base_Class.java:30)
-	at automation_core.Base_Class.setup(Base_Class.java:61)
+</pre></div><a href='#' onClick='toggleBox("stack-trace820878444", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace820878444'><pre>java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.&lt;init&gt;(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:83)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:130)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:194)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:305)
+	at automation_core.Base_Class.initializebrowser(Base_Class.java:60)
+	at automation_core.Base_Class.setup(Base_Class.java:67)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -243,7 +251,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>testscript.AdminUpdatePageTest@74e28667</td></tr>
+<td>testscript.KitchenPageTest@293a5bf6</td></tr>
 </table><p>
 </body>
 </html>

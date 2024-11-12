@@ -96,7 +96,7 @@ public class HomePage {
 	public KitchenPage click_on_Kitchen_Field()
 	{
 		kitchen_fld.click();
-		return null;
+		return new KitchenPage(driver);
 		
 	}
 

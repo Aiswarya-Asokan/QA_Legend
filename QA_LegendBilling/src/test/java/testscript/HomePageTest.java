@@ -17,9 +17,9 @@ public class HomePageTest extends Base_Class{
 	
 	 public void verify_userLogin_date() throws IOException
 	 {
-			String user_name=ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
-			String pass_word=ExcelUtility.getIntegerData(0, 1, Constants.LOGINPAGE);
-		   	String expected_result=Constants.MESSAGE+ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE)+Constants.LOGINPAGEEXTENSION;
+			String user_name=ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
+			String pass_word=ExcelUtility.getIntegerData(0, 1, Constants.LOGIN_PAGE);
+		   	String expected_result=Constants.MESSAGE+ExcelUtility.getStringData(1, 0, Constants.LOGIN_PAGE)+Constants.LOGIN_PAGE_EXTENSION;
 			 LoginPage login=new LoginPage(driver);
 			 login.enter_Username(user_name);
 			 login.enter_Password(pass_word);

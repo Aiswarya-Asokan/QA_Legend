@@ -39,7 +39,7 @@ public class AdminUpdateProfilePage {
 	}
 	public String verify_Get_Message() 
 	{
-		WaitUtility.waitFor_Element(driver, msg);
+		WaitUtility.waitForElement(driver, msg);
 		String result=msg.getText();
 		return result;
 	}

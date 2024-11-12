@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testscript.AdminUpdatePageTest">
+      <class name="testscript.KitchenPageTest">
         <methods>
-          <include name="verify_adminUpdate_Page"/>
-          <include name="closebrowser"/>
+          <include name="verify_kitchen_Order"/>
+          <include name="closeBrowser"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- testscript.AdminUpdatePageTest -->
+      </class> <!-- testscript.KitchenPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

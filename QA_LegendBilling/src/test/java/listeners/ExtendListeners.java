@@ -13,7 +13,7 @@ package listeners;
 
 	public class ExtendListeners extends Base_Class implements ITestListener{
 		private static final ExtentReports extent=ExtentManager.createInstance();
-		private static final ThreadLocal <ExtentTest> test = new ThreadLocal();		
+		private static final ThreadLocal <ExtentTest> test = new ThreadLocal<ExtentTest>();		
 		
 		public static ThreadLocal<ExtentTest> get_TestInstance()
 		{

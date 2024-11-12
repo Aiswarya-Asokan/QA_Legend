@@ -17,13 +17,15 @@ import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base_Class {
 	
-		@Test (groups={"regression","sanity"})
+		@Test
+		
+		(groups={"regression","sanity"})
 			
 		 public void verify_Login_With_Valid_Credentials() throws IOException
 		 {
-			String user_name=ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
-			String pass_word=ExcelUtility.getIntegerData(0, 1, Constants.LOGINPAGE);
-		   	String expected_result=Constants.MESSAGE+ExcelUtility.getStringData(1, 0, Constants.LOGINPAGE)+Constants.LOGINPAGEEXTENSION;
+			String user_name=ExcelUtility.getStringData(0, 0,"LoginTest");
+			String pass_word=ExcelUtility.getIntegerData(0, 1, "LoginTest");
+		   	String expected_result=Constants.MESSAGE+ExcelUtility.getStringData(1, 0, Constants.LOGIN_PAGE)+Constants.LOGIN_PAGE_EXTENSION;
 			 LoginPage login=new LoginPage(driver);
 			 login.enter_Username(user_name);
 			 login.enter_Password(pass_word);
@@ -45,7 +47,7 @@ public class LoginPageTest extends Base_Class {
 			 login.enter_Password(password);
 		     login.login_button_click();
 		     String actual_result=login.get_DisplayMessage();
-			 String expected_result=ExcelUtility.getStringData(2, 0, Constants.LOGINPAGE);
+			 String expected_result=ExcelUtility.getStringData(2, 0, Constants.LOGIN_PAGE);
 			 Assert.assertEquals(actual_result, expected_result, Messages.INVALIDCREDENTIAL);
 			
 		 }

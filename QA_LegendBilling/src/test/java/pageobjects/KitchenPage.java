@@ -14,7 +14,7 @@ public class KitchenPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//a[@data-href='https://qalegend.com/billing/public/sells/347']")
+	@FindBy(xpath= "//a[@data-href='https://qalegend.com/billing/public/modules/kitchen/mark-as-cooked/338']")
 	 WebElement order_details_fld;
 	
 	
