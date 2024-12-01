@@ -43,7 +43,7 @@ public class AddUserPage {
 		firstname_field.sendKeys(fname);
 		lastname_field.sendKeys(lname);
 		email_field.sendKeys(email);
-		PageUtility.selectByVisibleText(role_field,"Admin");
+		PageUtility. select_TextOperation(role_field,"Admin");
 		username_field.sendKeys(uname);
 		password_field.sendKeys(passwd);
 		confirm_passwordfield.sendKeys(confirmpasswd);

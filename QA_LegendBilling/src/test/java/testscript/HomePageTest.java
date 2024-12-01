@@ -13,7 +13,7 @@ import pageobjects.LoginPage;
 import utilities.ExcelUtility;
 
 public class HomePageTest extends Base_Class{
-	@Test
+	@Test(groups="Smoke")
 	
 	 public void verify_userLogin_date() throws IOException
 	 {

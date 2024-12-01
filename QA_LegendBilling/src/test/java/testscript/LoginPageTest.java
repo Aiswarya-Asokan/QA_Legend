@@ -17,9 +17,9 @@ import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base_Class {
 	
-		@Test
+		@Test(groups="Smoke")
 		
-		(groups={"regression","sanity"})
+		
 			
 		 public void verify_Login_With_Valid_Credentials() throws IOException
 		 {

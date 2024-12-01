@@ -2,6 +2,7 @@ package automation_core;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -15,75 +16,72 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import constants.Constants;
 
 public class Base_Class {
-    protected WebDriver driver;
-    private Properties prop;
+	 public WebDriver driver; 
+	 public FileInputStream file;
+	 public Properties prop;
+	 @BeforeMethod(alwaysRun = true)
+	 @Parameters("browser")
+	 public void initializebrowser(String browser)
+	 {
+		 prop=new Properties();
+		 try {
+			file=new FileInputStream(Constants.CONFIG_FILE);
+			try {
+				prop.load(file);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 if(browser.equals("Chrome"))
+		 {
+			 driver=new ChromeDriver();
+		 }
+		 else if(browser.equals("Edge"))
+		 {
+			 driver=new EdgeDriver();
+		 }
+		 else if(browser.equals("Firefox"))
+		 {
+			 driver=new FirefoxDriver();
+		 }
+		 else
+		 {
+			 throw new RuntimeException("Invalid browser");
+		 }
+		 driver.manage().window().maximize();
+	     //driver.get("https://qalegend.com/billing/public/login");
+		 driver.get(prop.getProperty("baseurl"));
+	 }
+	/* @BeforeMethod(alwaysRun=true)
+	 
+	 public void setup()
 
-    /**
-     * Initializes the browser based on the specified browser name.
-     * 
-     * @param browser the name of the browser to initialize
-     */
-    public void initializeBrowser(String browser) {
-        loadProperties();
-        
-        switch (browser.toLowerCase()) {
-            case "chrome":
-                driver = new ChromeDriver();
-                break;
-            case "edge":
-                driver = new EdgeDriver();
-                break;
-            case "firefox":
-                driver = new FirefoxDriver();
-                break;
-            default:
-                throw new RuntimeException("Invalid browser: " + browser);
-        }
-
-        driver.manage().window().maximize();
-        driver.get(prop.getProperty("url"));
-    }
-
-    @BeforeMethod(alwaysRun = true)
-    public void setup() {
-        initializeBrowser("Chrome"); // This can be made dynamic if needed
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void closeBrowser(ITestResult result) throws IOException {
-        if (result.getStatus() == ITestResult.FAILURE) {
-            takeScreenshot(result);
-        }
-        if (driver != null) {
-            driver.quit(); // Use quit instead of close for proper cleanup
-        }
-    }
-
-    /**
-     * Loads properties from the configuration file.
-     */
-    private void loadProperties() {
-        prop = new Properties();
-        try (FileInputStream file = new FileInputStream(Constants.CONFIG_FILE)) {
-            prop.load(file);
-        } catch (IOException e) {
-            e.printStackTrace(); // Log exception (consider using a logger)
-        }
-    }
-
-    /**
-     * Takes a screenshot and saves it to the specified location.
-     * 
-     * @param result the test result for which the screenshot is taken
-     * @throws IOException if an error occurs during file operations
-     */
-    public void takeScreenshot(ITestResult result) throws IOException {
-        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-        File screenshot = takesScreenshot.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(screenshot, new File("./Screenshot/" + result.getName() + ".png"));
-    }
+	 {
+		 initializebrowser("browser");
+	 }*/
+	 @AfterMethod(alwaysRun=true)
+	 
+	 public void closeBrowser(ITestResult result) throws IOException 
+	 {
+		if(result.getStatus()==ITestResult.FAILURE)
+		{
+			takeScreenshot(result);
+		}
+		driver.close();
+	 }
+	public void takeScreenshot(ITestResult result) throws IOException 
+	{
+		TakesScreenshot takescreenshot=(TakesScreenshot)driver;
+		File screenshot=takescreenshot.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshot, new File("./Screenshot/"+result.getName()+".png"));   //create a folder for a file
+	}
 }

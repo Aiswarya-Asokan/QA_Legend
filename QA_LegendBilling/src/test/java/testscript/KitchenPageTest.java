@@ -12,7 +12,7 @@ import pageobjects.LoginPage;
 import utilities.ExcelUtility;
 
 public class KitchenPageTest extends Base_Class {
-	@Test
+	@Test(groups="Smoke")
 	public void verify_kitchen_Order() throws IOException
 	{
 		

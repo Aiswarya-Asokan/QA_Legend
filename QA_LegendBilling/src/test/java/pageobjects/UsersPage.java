@@ -44,7 +44,7 @@ public class UsersPage {
 	 }
 	 public String display_Table()
 	 { 
-		 WaitUtility.waitForElement(driver, result_table);
+		 WaitUtility.waitFor_Element(driver, result_table);
 		 String result=result_table.getText();
 	  	return result;
 		

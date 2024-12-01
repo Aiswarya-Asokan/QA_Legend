@@ -30,7 +30,7 @@ public class ListAllStockTransferPage {
 	}
 	public String get_Table_Data() 
 	{
-			WaitUtility.waitForElement(driver, tabledata);
+			WaitUtility.waitFor_Element(driver, tabledata);
 			String result=tabledata.getText();
 			return result;
 	

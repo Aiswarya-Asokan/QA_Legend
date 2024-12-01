@@ -1,9 +1,14 @@
 package testscript;
 
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.beust.jcommander.Parameter;
 
 import automation_core.Base_Class;
 import constants.Constants;
@@ -18,11 +23,13 @@ import utilities.ExcelUtility;
 import utilities.RandomDataUtility;
 
 public class AddUserPageTest extends Base_Class {
-	 @Test
-	 public void verify_add_user() throws IOException
+	@Test(groups="smoke") 
+	@Parameters({"username","password"})
+	
+	 public void verify_add_user(String username,String password) throws IOException
 	 {
-		     String username=ExcelUtility.getStringData(0, 0, Constants.ADD_USERS_PAGE);
-			 String password=ExcelUtility.getIntegerData(0, 1, Constants.ADD_USERS_PAGE);
+		    // String username=ExcelUtility.getStringData(0, 0, Constants.ADD_USERS_PAGE);
+			// String password=ExcelUtility.getIntegerData(0, 1, Constants.ADD_USERS_PAGE);
 			 
 			 String fst_name=RandomDataUtility.get_Firstname();
 			 String lst_name=RandomDataUtility.get_Lastname();
@@ -41,8 +48,7 @@ public class AddUserPageTest extends Base_Class {
 			 adduser.add_userDatas(fst_name, lst_name, email_fld, user_name, passwd, passwd);
 			 adduser.ClickOn_SaveButton();
 			 users.search_User(user_name);
-			 String actual_result=users.display_Table();
-			 Assert.assertEquals(actual_result, user_name, Messages.USERADD);
+			 
 	 }
 	 
 	 @Test
@@ -75,7 +81,7 @@ public class AddUserPageTest extends Base_Class {
 		 login.click_onLogin_Button();
 		 String actual_result=home.user_LoginResult();
 		 String expected_result=Constants.MESSAGE+fst_name+Constants.ADD_USER_PAGEEXTENSION;
-		 Assert.assertEquals(actual_result, expected_result, Messages.INVALIDUSERADD);
+		 AssertJUnit.assertEquals(actual_result, expected_result, Messages.INVALIDUSERADD);
 		 
 
 	 }

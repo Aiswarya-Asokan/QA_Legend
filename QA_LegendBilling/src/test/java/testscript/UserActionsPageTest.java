@@ -14,8 +14,8 @@ import utilities.ExcelUtility;
 import utilities.RandomDataUtility;
 
 public class UserActionsPageTest extends Base_Class {
-	
-	@Test
+	@Test(groups="Smoke")
+
 	public void verify_ViewUser_Page() throws IOException
 	{
 		 String username=ExcelUtility.getStringData(0, 0, "UserActionsPageTest");

@@ -3,6 +3,8 @@
 <suite name="Suite" parallel="tests" thread-count="3">
 	<test thread-count="5" name="loginPageTest">
 	<parameter name="browser" value="Chrome"></parameter>
+	 <parameter name="username" value="admin" />
+	  <parameter name="password" value="123456" />
     <classes>
       <class name="testscript.LoginPageTest">
 	  </class>
@@ -10,8 +12,13 @@
       </test>
       <test thread-count="5" name="adduserPageTest">
 	<parameter name="browser" value="Chrome"></parameter>
+	 <parameter name="username" value="admin" />
+	  <parameter name="password" value="123456" />
     <classes>
       <class name="testscript.AddUserPageTest">
+		    <methods>
+				<include name="verify_add_user"></include>
+			</methods>
 	  </class>
       </classes>
   </test> <!-- Test -->

@@ -30,6 +30,6 @@ public class AddNewBookingPage {
 	}
 	public void customer_Selection_fld()
 	{
-		PageUtility.selectByVisibleText(customer_fld, "Walk-In Customer (CO0001)");
+		PageUtility. select_TextOperation(customer_fld, "Walk-In Customer (CO0001)");
 	}
 }
