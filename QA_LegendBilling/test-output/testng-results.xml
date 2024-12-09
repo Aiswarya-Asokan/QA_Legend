@@ -1,49 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-01T14:43:52 IST" name="Suite" finished-at="2024-12-01T14:44:18 IST" duration-ms="26266">
+  <suite started-at="2024-12-02T09:38:19 IST" name="Grouping" finished-at="2024-12-02T09:38:45 IST" duration-ms="26180">
     <groups>
       <group name="smoke">
-        <method signature="AddUserPageTest.verify_add_user(java.lang.String,java.lang.String)[pri:0, instance:testscript.AddUserPageTest@229f66ed]" name="verify_add_user" class="testscript.AddUserPageTest"/>
+        <method signature="AddUserPageTest.verify_add_user(java.lang.String,java.lang.String)[pri:0, instance:testscript.AddUserPageTest@49e53c76]" name="verify_add_user" class="testscript.AddUserPageTest"/>
       </group> <!-- smoke -->
-      <group name="Smoke">
-        <method signature="LoginPageTest.verify_Login_With_Valid_Credentials()[pri:0, instance:testscript.LoginPageTest@74f0ea28]" name="verify_Login_With_Valid_Credentials" class="testscript.LoginPageTest"/>
-      </group> <!-- Smoke -->
     </groups>
-    <test started-at="2024-12-01T14:43:52 IST" name="loginPageTest" finished-at="2024-12-01T14:44:12 IST" duration-ms="20352">
-      <class name="testscript.LoginPageTest">
-        <test-method is-config="true" signature="initializebrowser(java.lang.String)[pri:0, instance:testscript.LoginPageTest@74f0ea28]" started-at="2024-12-01T14:43:52 IST" name="initializebrowser" finished-at="2024-12-01T14:44:02 IST" duration-ms="10274" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializebrowser -->
-        <test-method signature="verify_Login_With_Valid_Credentials()[pri:0, instance:testscript.LoginPageTest@74f0ea28]" started-at="2024-12-01T14:44:02 IST" name="verify_Login_With_Valid_Credentials" finished-at="2024-12-01T14:44:11 IST" duration-ms="9021" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_Login_With_Valid_Credentials -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscript.LoginPageTest@74f0ea28]" started-at="2024-12-01T14:44:11 IST" name="closeBrowser" finished-at="2024-12-01T14:44:12 IST" duration-ms="956" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verify_Login_With_Valid_Credentials status=SUCCESS method=LoginPageTest.verify_Login_With_Valid_Credentials()[pri:0, instance:testscript.LoginPageTest@74f0ea28] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- testscript.LoginPageTest -->
-    </test> <!-- loginPageTest -->
-    <test started-at="2024-12-01T14:43:52 IST" name="adduserPageTest" finished-at="2024-12-01T14:44:18 IST" duration-ms="26266">
+    <test started-at="2024-12-02T09:38:19 IST" name="Test" finished-at="2024-12-02T09:38:45 IST" duration-ms="26180">
       <class name="testscript.AddUserPageTest">
-        <test-method is-config="true" signature="initializebrowser(java.lang.String)[pri:0, instance:testscript.AddUserPageTest@229f66ed]" started-at="2024-12-01T14:43:52 IST" name="initializebrowser" finished-at="2024-12-01T14:44:02 IST" duration-ms="10346" status="PASS">
+        <test-method is-config="true" signature="initializebrowser(java.lang.String)[pri:0, instance:testscript.AddUserPageTest@49e53c76]" started-at="2024-12-02T09:38:19 IST" name="initializebrowser" finished-at="2024-12-02T09:38:30 IST" duration-ms="11799" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -54,7 +21,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializebrowser -->
-        <test-method signature="verify_add_user(java.lang.String,java.lang.String)[pri:0, instance:testscript.AddUserPageTest@229f66ed]" started-at="2024-12-01T14:44:02 IST" name="verify_add_user" finished-at="2024-12-01T14:44:18 IST" duration-ms="15531" status="PASS">
+        <test-method signature="verify_add_user(java.lang.String,java.lang.String)[pri:0, instance:testscript.AddUserPageTest@49e53c76]" started-at="2024-12-02T09:38:30 IST" name="verify_add_user" finished-at="2024-12-02T09:38:44 IST" duration-ms="13374" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -70,11 +37,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_add_user -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscript.AddUserPageTest@229f66ed]" started-at="2024-12-01T14:44:18 IST" name="closeBrowser" finished-at="2024-12-01T14:44:18 IST" duration-ms="309" status="PASS">
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:testscript.AddUserPageTest@49e53c76]" started-at="2024-12-02T09:38:44 IST" name="closeBrowser" finished-at="2024-12-02T09:38:45 IST" duration-ms="905" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verify_add_user status=SUCCESS method=AddUserPageTest.verify_add_user(java.lang.String,java.lang.String)[pri:0, instance:testscript.AddUserPageTest@229f66ed] output={null}]]]>
+                <![CDATA[[TestResult name=verify_add_user status=SUCCESS method=AddUserPageTest.verify_add_user(java.lang.String,java.lang.String)[pri:0, instance:testscript.AddUserPageTest@49e53c76] output={null}]]]>
               </value>
             </param>
           </params>
@@ -82,6 +49,6 @@
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- testscript.AddUserPageTest -->
-    </test> <!-- adduserPageTest -->
-  </suite> <!-- Suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Grouping -->
 </testng-results>

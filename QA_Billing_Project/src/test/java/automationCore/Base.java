@@ -1,23 +1,35 @@
 package automationCore;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
+import constants.Constants;
+import utility.ScreenshotUtility;
+import utility.WaitUtility;
+
 public class Base {
+	Properties prop;
+	FileInputStream fs;
 	public WebDriver driver;
 @BeforeMethod(alwaysRun=true)
 @Parameters("browser")
+
 	public void intialiseBrowser(String browser) throws Exception
 	{
+	prop=new Properties();
+	fs=new FileInputStream(Constants.CONFIGFILE);
+	prop.load(fs);
 	if(browser.equalsIgnoreCase("Chrome"))
 	{
 		driver=new ChromeDriver();
@@ -34,14 +46,19 @@ public class Base {
 	{
 		throw new Exception("Invalid Browser");
 	}
-	driver.get("https://qalegend.com/billing/public/login");
+	driver.get(prop.getProperty("url"));
 	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICITWAIT));
 }
 
 @AfterMethod(alwaysRun=true)
-	public void driverQuit()
+	public void driverQuit(ITestResult iTestResult) throws IOException
 	{
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	if(iTestResult.getStatus()==ITestResult.FAILURE)
+	{
+		ScreenshotUtility screenShot=new ScreenshotUtility();
+		screenShot.getScreenshot(driver, iTestResult.getName());
+	}
 		driver.quit();
 		
 	}

@@ -15,7 +15,8 @@ public class RetryListener implements IAnnotationTransformer{
 
 
 
-/*ITestAnnotation annotation: Represents the annotation of the current test method. By modifying this, you can set properties dynamically.
+/*ITestAnnotation annotation: Represents the annotation of the current test method. By modifying this, 
+ * you can set properties dynamically.
 Class testClass: The class in which the test method is declared.
 Constructor testConstructor: The constructor of the test method (if applicable).
 Method testMethod: The actual test method being executed.  

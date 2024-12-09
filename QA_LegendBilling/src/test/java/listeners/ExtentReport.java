@@ -21,7 +21,7 @@ public class ExtentReport implements ITestListener {
 	ExtentReports reports; //Main report manager class, managing the lifecycle of the report. html file link(to connect with overall reports)
 	ExtentTest test;  // Represents each test case that is added to the report.(login info about each testcase pass/fail/skip)
 
-	public void configureReport() {
+	public void configureReport() { //configures report generation
 		Date date = new Date(); 
 		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy_hhmmss");   //Sets a timestamp to create a unique report file each time by using SimpleDateFormat.
 		String strDate = formatter.format(date);  //formatter is an instance of SimpleDateFormat, which formats the date object (current date and time).
@@ -31,12 +31,12 @@ public class ExtentReport implements ITestListener {
 		if (!reportPath.exists()) {    //check if the folder exist
 			reportPath.mkdir();
 		}
-		sparkReporter = new ExtentSparkReporter(
+		sparkReporter = new ExtentSparkReporter( //configured to generate html report
 				System.getProperty("user.dir") + "//ExtentReport//" + "ExtentReport_" + strDate + ".html");
 		reports = new ExtentReports();   //ExtentReports is initialized to manage the reporting lifecycle, adding tests, and logging results.
 		reports.attachReporter(sparkReporter);  // associates the ExtentReports instance with sparkReporter, specifying that sparkReporter will handle the HTML report generation.
 
-		reports.setSystemInfo("Project", "Billing Application");  //adding project details
+		reports.setSystemInfo("Project", "Billing Application");  //system information
 		reports.setSystemInfo("PC Name", "Aiswarya");
 		reports.setSystemInfo("OS", "Windows 11");
 		reports.setSystemInfo("Test Done By", "Aiswarya");		
@@ -44,6 +44,7 @@ public class ExtentReport implements ITestListener {
 		sparkReporter.config().setReportName("Report Summary");
 		sparkReporter.config().setTheme(Theme.STANDARD);
 	}	
+	//report appearance
 
 	public void onTestSuccess(ITestResult result) {    // Logs successful test cases.
 		test = reports.createTest(result.getName());  ////Creates a new test in the report with the test name and logs it as PASS with a green label.

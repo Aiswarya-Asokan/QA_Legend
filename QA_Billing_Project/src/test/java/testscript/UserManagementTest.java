@@ -3,10 +3,7 @@ package testscript;
 import java.io.IOException;
 import java.time.Duration;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +13,8 @@ import pages.UserManagementPage;
 import utility.ExcelUtility;
 
 public class UserManagementTest extends Base {
-@Test
+	UserManagementPage usermanagementpage;
+@Test(retryAnalyzer=retry.Retry.class,description="to add new user")
 	public void verifyAddNewUser() throws IOException
 	{
 	String username=ExcelUtility.getStringData(1, 0,"UserManagement");
@@ -30,19 +28,17 @@ public class UserManagementTest extends Base {
 	
 	
 	LoginPage loginpage=new LoginPage(driver);	
-	loginpage.enterUsernameOnUsernameField(username);
-	loginpage.enterPasswordOnPasswordField(password);
-	loginpage.clickOnLoginButton();
-	UserManagementPage usermanagementpage=new UserManagementPage(driver);
-	usermanagementpage.clickOnUserManagementPage();
-	usermanagementpage.clickOnUsersMenu();
-	usermanagementpage.clickOnAddButton();
-usermanagementpage.enterSurnameOnSurnameField(surname);
-usermanagementpage.enterFirstnameOnFirstnameField(firstname);
-usermanagementpage.enterEmailOnEmailField(email);
-usermanagementpage.enterPasswordOnPasswordField(confirmaccountpassword);
-usermanagementpage.enterPasswordOnConfirmPasswordField(confirmaccountpassword);
-usermanagementpage.clickOnSaveButton();
+	usermanagementpage=loginpage.enterUsernameOnUsernameField(username)
+			.enterPasswordOnPasswordField(confirmaccountpassword)
+			.clickOnLoginButton().clickOnUserManagementPage().clickOnUsersMenu().clickOnAddButton()
+			.enterSurnameOnSurnameField(surname).enterFirstnameOnFirstnameField(firstname)
+			.enterEmailOnEmailField(email).enterPasswordOnPasswordField(confirmaccountpassword)
+			.enterPasswordOnConfirmPasswordField(confirmaccountpassword).clickOnSaveButton();
+	boolean expectedAddAlert = true;
+	boolean actualAddAlert = usermanagementpage.addAlertDisplayed();
+	Assert.assertEquals(expectedAddAlert, actualAddAlert,"Couldn't add new user");
+	
+	
 
 	}
 }

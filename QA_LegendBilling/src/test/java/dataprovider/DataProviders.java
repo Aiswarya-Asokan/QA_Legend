@@ -2,6 +2,7 @@ package dataprovider;
 
 import org.testng.annotations.DataProvider;
 
+//The @DataProvider annotation in TestNG allows you to run the same test with multiple data sets.
 public class DataProviders {
 	
 		@DataProvider(name="Invalidusercredentials")

@@ -17,22 +17,29 @@ public class LoginPage {
 	@FindBy(id="password") private WebElement passwordField;
 	@FindBy(xpath="//button[@type='submit']") private WebElement loginButton;
 	@FindBy(xpath="//label[@class='btn btn-info active']") private WebElement isTodayButtonDisplayed;
-	
-	public void enterUsernameOnUsernameField(String username)
+	@FindBy(xpath="//strong[text()='These credentials do not match our records.']") private WebElement errorMessage;
+	public LoginPage enterUsernameOnUsernameField(String username)
 	{
 		loginField.sendKeys(username);
+		return this;
 	}
-	public void enterPasswordOnPasswordField(String password)
+	public LoginPage enterPasswordOnPasswordField(String password)
 	{
-		passwordField.sendKeys(password);	
+		passwordField.sendKeys(password);
+		return this;
 	}
-	public void clickOnLoginButton()
+	public UserManagementPage clickOnLoginButton()
 	{
 		loginButton.click();
+		return new UserManagementPage(driver);
 	}
 	public boolean isTodayButtonDisplayed()
 	{
 		return isTodayButtonDisplayed.isDisplayed();
 	
+	}
+	public String getTextFromErrorMessage()
+	{
+		return errorMessage.getText();
 	}
 }
