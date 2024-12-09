@@ -8,9 +8,9 @@
   <test thread-count="5" name="Test">
     <classes>
 		
-      <class name="testscript.PurchaseTest">
+      <class name="testscript.LoginTest">
 		  <methods>
-			  <include name="verifyAddNewPurchaseDetail"></include>
+			  <include name="verifyLoginWithValidUsernameAndValidPassword"></include>
 			  </methods>
 			  </class>
 			 

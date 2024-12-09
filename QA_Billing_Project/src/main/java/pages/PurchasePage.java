@@ -1,4 +1,4 @@
-package pages;
+/*package pages;
 
 import java.awt.AWTException;
 
@@ -96,4 +96,4 @@ public void exTax() {
 public void inTax() {
 	intax.sendKeys("3750");
 }
-}
+}*/

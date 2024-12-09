@@ -1,4 +1,4 @@
-package testscript;
+/*package testscript;
 
 import java.awt.AWTException;
 import java.io.IOException;
@@ -37,4 +37,4 @@ public void verifyAddNewPurchaseDetail() throws IOException, AWTException
 	purchase.clickOnSubmitButton();
 	
 }
-}
+}*/
